@@ -2,6 +2,7 @@ class WebShareWrapper extends HTMLElement {
   constructor() {
     super();
 
+    console.log("Constructor started");
     this.webShare = 'share' in navigator;
     if (this.webShare) {
       const templateId = this.getTemplateId();
