@@ -2,8 +2,9 @@ class WebShareWrapper extends HTMLElement {
   constructor() {
     super();
 
-    console.log("Constructor started");
     this.webShare = 'share' in navigator;
+    var res = this.getBypassCheck();
+    console.log('result', res);
     if (this.webShare) {
       const templateId = this.getTemplateId();
       if (templateId !== null) {
@@ -91,6 +92,10 @@ class WebShareWrapper extends HTMLElement {
 
   getTemplateId() {
     return this.getAttribute('template');
+  }
+
+  getBypassCheck() {
+    return this.getAttribute('bypass');
   }
 
   removeChildren() {
