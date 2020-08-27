@@ -43,6 +43,7 @@ class WebShareWrapper extends HTMLElement {
 
   connectedCallback() {
     if (this.webShare) {
+      console.log("hhmmmmm");
       this.addEventListener('click', this.share);
     }
   }
